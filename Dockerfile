@@ -14,7 +14,7 @@ RUN gem update --system ${RUBYGEMS_VERSION} && \
     bundle install
 COPY . /activerecorder_back
 
-COPY docker/entrypoint.sh /usr/bin/
+COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
