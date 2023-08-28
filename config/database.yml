@@ -17,4 +17,4 @@ test:
 production:
   <<: *default
   database: activerecorder_back_production
-  password: <%= ENV["DATABASE_URL"] %>
+  password: <%= ENV["ACTIVERECORDER_BACK_DATABASE_PASSWORD"] %>
