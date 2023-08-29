@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
     def index
-        @word = "hello"
+        @word = {text: "hello"}
         render json: @word
     end
 end
