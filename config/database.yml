@@ -18,4 +18,4 @@ production:
   <<: *default
   database: activerecorder_production
   username: activerecorder
-  password: <%= ENV['ACTIVERECORDER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
