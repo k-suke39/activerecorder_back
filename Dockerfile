@@ -13,7 +13,6 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 # Gemfileの記述を元にbundle installを実行
 RUN bundle install
 COPY . /myapp
-
 # ローカルで作成したentrypoint.shファイル(後で記述)を/usr/bin/へコピー
 COPY entrypoint.sh /usr/bin/
 # /usr/bin/entrypoint.shに対して実行権限を付与している(chmod +x)
