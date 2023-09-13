@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: arc_development
+
+test:
+  <<: *default
+  database: arc_test
+
+production:
+  <<: *default
+  database: arc_production
+  username: arc
+  url: <%= ENV['DATABASE_URL'] %>
