@@ -48,3 +48,6 @@ end
 
 # CORS
 gem 'rack-cors'
+
+# seed
+gem 'seed-fu'
