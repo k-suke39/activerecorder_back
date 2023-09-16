@@ -13,6 +13,7 @@ Rails.application.routes.draw do
           get :confirm
         end
       end
+      resources :practices, only: [:index] 
     end
   end
 end
