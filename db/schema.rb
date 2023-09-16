@@ -16,8 +16,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_024309) do
 
   create_table "chapters", force: :cascade do |t|
     t.bigint "work_id", null: false
-    t.string "name"
-    t.integer "order_number"
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.integer "order_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["work_id"], name: "index_chapters_on_work_id"
@@ -66,15 +67,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_024309) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "password", null: false
+    t.integer "role", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "works", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "slug"
-    t.integer "order_number"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "slug", null: false
+    t.integer "order_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
