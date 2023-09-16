@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :answers, only: [] do
         collection do
           get :check
+          get :confirm
         end
       end
     end
