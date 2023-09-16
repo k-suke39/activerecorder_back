@@ -9,4 +9,9 @@ class Api::V1::AnswersController < ApplicationController
   rescue => e
     render json: { result: false }
   end
+
+  def confirm
+    answer = Practice.find_by(id: 1).answer
+    render json: { result: answer }
+  end
 end
