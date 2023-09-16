@@ -7,6 +7,11 @@ Rails.application.routes.draw do
           get :execute
         end
       end
+      resources :answers, only: [] do
+        collection do
+          get :check
+        end
+      end
     end
   end
 end
