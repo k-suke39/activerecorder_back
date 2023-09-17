@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       resources :practices, only: [:index] 
     end
   end
+  post 'auth/:provider/callback', to: 'api/v1/authentications#create'
 end
