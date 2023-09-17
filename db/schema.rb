@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_143722) do
   create_table "practices", force: :cascade do |t|
     t.bigint "chapter_id", null: false
     t.bigint "work_id", null: false
+    t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "question", null: false
     t.text "answer", null: false
@@ -72,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_143722) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chapter_id"], name: "index_practices_on_chapter_id"
+    t.index ["user_id"], name: "index_practices_on_user_id"
     t.index ["work_id"], name: "index_practices_on_work_id"
   end
 
@@ -100,5 +102,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_143722) do
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "practices", "chapters"
+  add_foreign_key "practices", "users"
   add_foreign_key "practices", "works"
 end
