@@ -10,8 +10,53 @@ class Api::V1::AnswersController < ApplicationController
     render json: { result: false }
   end
 
-  def confirm
-    answer = Practice.find_by(id: 1).answer
-    render json: { result: answer }
+  private
+
+def check_strings(input, strings)
+  strings.each do |s|
+    if input.include?(s)
+      raise "実行できませんでした。コードが正しいか一度確認してみてください。"
+    end
   end
+end
+
+def forbidden_string
+  return [
+    "Work",
+    "Chapter", 
+    "Practice",
+    "Authentication",
+    "build",
+    "new",
+    "touch",
+    "increment",
+    "increment!",
+    "decrement",
+    "decrement!",
+    "delete_all",
+    "save",
+    "create",
+    "create!",
+    "update",
+    "update!",
+    "update_attribute",
+    "update_attributes",
+    "update_attributes!",
+    "destroy",
+    "destroy!",
+    "destroy_all",
+    "delete",
+    "delete_all",
+    "first_or_create",
+    "first_or_create!",
+    "first_or_initialize",
+    "toggle",
+    "toggle!",
+    "destroy_by",
+    "delete_by",
+    "reverse",
+    "split",
+    "join",
+  ]
+end
 end

@@ -52,3 +52,6 @@ gem 'rack-cors'
 
 # seed
 gem 'seed-fu'
+
+# authorization
+gem 'cancancan'
