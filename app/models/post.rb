@@ -2,8 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes
-  has_many :liked_users, through: :likes, source: :user
 
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :title,               presence: true, length: { minimum: 9_999_999 }
+  validates :body,              presence: true, length: { minimum: 9_999_999 }
 end
