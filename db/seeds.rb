@@ -1,3 +1,9 @@
+User.destroy_all
+Post.destroy_all
+Comment.destroy_all
+Like.destroy_all
+
+
 users = [
   { :id => 1, :password => "xxxxxxxxxx", :email => "john@example.com",   :name => "John"   },
   { :id => 2, :password => "xxxxxxxxxx", :email => "emily@example.com", :name => "Emily" },
