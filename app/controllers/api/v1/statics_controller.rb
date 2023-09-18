@@ -18,5 +18,4 @@ class Api::V1::StaticsController < ApplicationController
   rescue StandardError => e
     render json: { error: false }
   end
-  end
 end
