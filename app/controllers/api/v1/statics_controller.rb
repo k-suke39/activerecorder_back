@@ -16,6 +16,6 @@ class Api::V1::StaticsController < ApplicationController
     render json: { true: true }
     
   rescue StandardError => e
-    render json: { error: false }
+    render json: { error: e.message }
   end
 end
