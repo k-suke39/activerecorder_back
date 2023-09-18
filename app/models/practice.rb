@@ -1,4 +1,4 @@
 class Practice < ApplicationRecord
-  belongs_to :chapter
-  belongs_to :work
+  belongs_to :chapter, optional: true
+  belongs_to :work, optional: true
 end
