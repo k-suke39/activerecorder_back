@@ -33,7 +33,7 @@ class Api::V1::ExecutionsController < Api::V1::ApplicationController
     render json: { result: user_answer == question_answer }
     
   rescue => e
-    render json: { result: "実行できませんでした。コードが正しいか一度確認してみてください。" }
+    render json: { result: false }
   end
 end
 
