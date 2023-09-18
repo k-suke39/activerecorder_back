@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'api/v1/executions#index'
+  root 'api/v1/statics#index'
   namespace :api, format: 'json' do
     namespace :v1 do
       resources :statics, only: [:index]
