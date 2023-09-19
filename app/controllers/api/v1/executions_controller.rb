@@ -6,15 +6,6 @@ class Api::V1::ExecutionsController < Api::V1::ApplicationController
 
     query = eval(input_string)
 
-    if query.is_a?(ActiveRecord::Relation) && query.is_a?(User)
-      # queryがActiveRecord::Relation（つまり、User.allなどの結果）である場合
-      query = query.map do |user|
-        user.attributes.except("role")
-      end
-    elsif query.is_a?(User)
-      # queryがUserインスタンスである場合
-      query = query.attributes.except("role")
-    end    
     render json: query
   rescue => e
     render json: { result: "実行できませんでした。コードが正しいか一度確認してみてください。" }
