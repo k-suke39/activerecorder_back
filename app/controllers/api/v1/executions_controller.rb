@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module Api
   module V1
     class ExecutionsController < Api::V1::ApplicationController
@@ -43,8 +42,11 @@ end
 def forbidden_string
   [
     'Work',
+    'works'
     'Chapter',
+    'chapters',
     'Practice',
+    'practices',
     'Authentication',
     'build',
     'new',
@@ -76,6 +78,8 @@ def forbidden_string
     'delete_by',
     'reverse',
     'split',
-    'join'
+    'join',
+    "ActiveRecord::Base.connection.execute",
+    "ActiveRecord"
   ]
 end
