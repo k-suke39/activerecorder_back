@@ -1,8 +1,14 @@
-class Api::V1::PracticesController < ApplicationController
-  def index
-    work = Work.find_by(slug: params[:slug])
-    practices = work.practices
+# frozen_string_literal: true
 
-    render json: practices
+module Api
+  module V1
+    class PracticesController < ApplicationController
+      def index
+        work = Work.find_by(slug: params[:slug])
+        practices = work.practices
+
+        render json: practices
+      end
+    end
   end
 end

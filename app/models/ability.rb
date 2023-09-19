@@ -3,10 +3,10 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-      can :read, User
-      cannot :delete, User
-      cannot :update, User
-      cannot :create, User
+  def initialize(_user)
+    can :read, User
+    cannot :delete, User
+    cannot :update, User
+    cannot :create, User
   end
 end
