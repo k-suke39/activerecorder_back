@@ -5,9 +5,10 @@ module Api
     class AnswersController < ApplicationController
       def check
         user_answer = eval(URI.decode_www_form_component(params[:user_answer]))
-        answer = Practice.find_by(id: 1).answer
+        answer = Practice.find_by(id: params[:practice_id]).answer
         question_answer = eval(answer)
 
+        pp user_answer == question_answer
         render json: { result: user_answer == question_answer }
       rescue StandardError
         render json: { result: false }
