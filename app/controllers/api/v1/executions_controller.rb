@@ -19,7 +19,6 @@ class Api::V1::ExecutionsController < Api::V1::ApplicationController
   rescue => e
     render json: { result: "実行できませんでした。コードが正しいか一度確認してみてください。" }
   end
-
   def check 
     input_string = URI.decode_www_form_component(params[:user_answer])
 
