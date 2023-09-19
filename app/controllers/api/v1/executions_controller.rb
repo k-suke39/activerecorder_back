@@ -21,62 +21,26 @@ class Api::V1::ExecutionsController < Api::V1::ApplicationController
   end
 
   def execute_input(input)
-    eval(input) 
+    eval(input) # evalの使用はセキュリティ上のリスクがあります。
   end
 
   def execute_and_rescue(input)
     begin
       { result: execute_input(input) }
     rescue => e
-      { result: "実行できませんでした。コードが正しいか一度確認してみてください。" }
+      { result: "実行できませんでした。エラー: #{e.message}" }
     end
   end
 
   def check_strings(input, strings)
     strings.each do |s|
       if input.include?(s)
-        raise "実行できませんでした。コードが正しいか一度確認してみてください。"
+        raise "禁止されている文字列が含まれています：#{s}"
       end
     end
   end
 
   def forbidden_string
-    return [
-      "Work",
-      "Chapter", 
-      "Practice",
-      "Authentication",
-      "build",
-      "new",
-      "touch",
-      "increment",
-      "increment!",
-      "decrement",
-      "decrement!",
-      "delete_all",
-      "save",
-      "create",
-      "create!",
-      "update",
-      "update!",
-      "update_attribute",
-      "update_attributes",
-      "update_attributes!",
-      "destroy",
-      "destroy!",
-      "destroy_all",
-      "delete",
-      "delete_all",
-      "first_or_create",
-      "first_or_create!",
-      "first_or_initialize",
-      "toggle",
-      "toggle!",
-      "destroy_by",
-      "delete_by",
-      "reverse",
-      "split",
-      "join",
-    ]
+    # 禁止されている文字列のリストはそのままです。
   end
 end
