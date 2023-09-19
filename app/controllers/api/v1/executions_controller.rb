@@ -21,7 +21,6 @@ class Api::V1::ExecutionsController < Api::V1::ApplicationController
   end
 
   def check 
-    binding.pry
     input_string = URI.decode_www_form_component(params[:user_answer])
 
     check_strings(input_string, forbidden_string)
