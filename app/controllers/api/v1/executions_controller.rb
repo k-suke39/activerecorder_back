@@ -76,7 +76,7 @@ module Api
           'delete_by',
           'reverse',
           'split',
-          'join'
+          'join',
           'find_by_sql',
           'ActiveRecord::Base',
           'connection',
