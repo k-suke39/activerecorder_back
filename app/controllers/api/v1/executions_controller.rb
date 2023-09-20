@@ -77,6 +77,9 @@ module Api
           'reverse',
           'split',
           'join'
+          'find_by_sql',
+          'ActiveRecord::Base',
+          'connection',
         ]
       end
     end
