@@ -80,6 +80,14 @@ module Api
           'find_by_sql',
           'ActiveRecord::Base',
           'connection',
+          'touch_all',
+          'clear_validators',
+          'create_with',
+          'insert_all',
+          'update_columns',
+          'update_counters',
+          'create_or_find_by',
+          'find_or_initialize_by'
         ]
       end
     end
