@@ -185,9 +185,9 @@ chapters = [
 
   # 中級編
   { id: 40, work_id: 3, name: 'current_userがコメントした全てのユーザーを取得する', slug: 'intermediate', order_number: 1 },
-  { id: 41, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate',
+  { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',
     order_number: 2 },
-  { id: 42, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',
+  { id: 42, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate',
     order_number: 2 }
 
 ]
@@ -229,10 +229,12 @@ practices = [
   { id: 40, work_id: 3, chapter_id: 40, user_id: 3, title: 'current_userがコメントした全てのユーザーを取得する',
     question: 'Steveがcurrent_userです。Steveがコメントした全てのユーザーを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.comments.map { |comment| comment.post.user }.uniq', order_number: 1 },
   { id: 41, work_id: 3, chapter_id: 41, user_id: 10,
-    title: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', question: 'Billがcurrent_userです。Billがコメントした投稿の中で最も多くいいねされたものを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.comments.map(&:post).max_by { |post| post.likes.count }', order_number: 3 },
-  { id: 42, work_id: 3, chapter_id: 42, user_id: 5, title: 'current_userがコメントした投稿の中で最も多くいいねされた投稿を取得する',
-    question: 'Andersonがcurrent_userです。Andersonがいいねした全ての投稿の中で最も多くコメントされたものを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 }  
+    title: 'current_userがコメントした投稿の中で最も多くいいねされた投稿を取得する', question: 'Billがcurrent_userです。Billがコメントした投稿の中で最も多くいいねされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.comments.map(&:post).max_by { |post| post.likes.count }', order_number: 3 },
+  { id: 42, work_id: 3, chapter_id: 42, user_id: 5, title: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する',
+    question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くいいねされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 }  
 ]
+
+
 
 practices.each do |practice|
   Practice.create!(practice)
