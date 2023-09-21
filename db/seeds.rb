@@ -172,7 +172,7 @@ chapters = [
   { id: 1, work_id: 1, name: '操作に慣れてみよう!', slug: 'trial', order_number: 2 },
   { id: 2, work_id: 1, name: 'allメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
   { id: 3, work_id: 1, name: 'find_byメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
-  { id: 4, work_id: 1, name: '他のデータも取得してみよう！', slug: 'trial', order_number: 3 },
+  { id: 4, work_id: 1, name: '他のデータも取得してみよう!', slug: 'trial', order_number: 3 },
   { id: 5, work_id: 1, name: 'whereメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
   # 初級編
   { id: 20, work_id: 2, name: 'current_userの投稿を取得する', slug: 'basic', order_number: 4 },
