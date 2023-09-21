@@ -157,7 +157,7 @@ likes.each do |like|
 end
 
 works = [
-  { id: 1, name: 'トライアル編', description: '操作に慣れてみましょう！', slug: 'trial', order_number: 1 },
+  { id: 1, name: 'トライアル編', description: '操作に慣れてみよう!', slug: 'trial', order_number: 1 },
   { id: 2, name: '初級編', description: 'current_userを使ってデータを取得してみよう!', slug: 'basic', order_number: 1 },
   { id: 3, name: '中級編', description: 'current_userを使って複雑なデータを取得してみよう!', slug: 'intermediate',
     order_number: 1 }
@@ -172,7 +172,7 @@ chapters = [
   { id: 1, work_id: 1, name: '操作に慣れてみよう!', slug: 'trial', order_number: 2 },
   { id: 2, work_id: 1, name: 'allメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
   { id: 3, work_id: 1, name: 'find_byメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
-  { id: 4, work_id: 1, name: '他のデータも取得してみよう！', slug: 'trial', order_number: 3 },
+  { id: 4, work_id: 1, name: '他のデータも取得してみよう!', slug: 'trial', order_number: 3 },
   { id: 5, work_id: 1, name: 'whereメソッドを使ってみよう!', slug: 'trial', order_number: 3 },
   # 初級編
   { id: 20, work_id: 2, name: 'current_userの投稿を取得する', slug: 'basic', order_number: 4 },
