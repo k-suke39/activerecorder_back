@@ -10,7 +10,7 @@ module Api
         if chapters.present? && work.present?
           render json: { chapters:, description: work.description }
         else
-          render json: { result: 'Not Found' }, status: :not_found
+          render json: { error: 'Not Found' }, status: :not_found
         end
       end
     end
