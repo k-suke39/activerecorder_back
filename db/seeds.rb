@@ -225,6 +225,7 @@ practices = [
   { id: 26, work_id: 2, chapter_id: 26, user_id: 6, title: 'current_userがいいねした特定の投稿を取得する',
     question: 'Georgeがcurrent_userです。Georgeがいいねした【最近見た映画】という投稿を取得してください', answer: 'current_user.liked_posts.where(title: "最近見た映画")', order_number: 3 },
 
+    
   # 中級編
   { id: 40, work_id: 3, chapter_id: 40, user_id: 3, title: 'current_userがコメントした全てのユーザーを取得する',
     question: 'Steveがcurrent_userです。Steveがコメントした全てのユーザーを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.comments.map { |comment| comment.post.user }.uniq', order_number: 1 },
