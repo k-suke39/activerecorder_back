@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :practices, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
-  has_many :commented_posts, through: :likes, source: :post
+  has_many :commented_posts, through: :comments, source: :post
 end
