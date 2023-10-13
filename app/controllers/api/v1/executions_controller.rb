@@ -59,8 +59,10 @@ module Api
             name: event.name,
             duration: event.duration.to_f.round(2)
           }
-          logs << json_data
-          logger.debug(json_data.to_json)
+          unless logs.map { |log| log[:sql] }.include?(json_data[:sql])
+            logs << json_data
+            logger.debug(json_data.to_json)
+          end
         end
 
         result = eval(input)
