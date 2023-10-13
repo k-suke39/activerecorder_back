@@ -180,7 +180,7 @@ chapters = [
   { id: 22, work_id: 2, name: 'current_userが投稿した特定のタイトルの投稿を取得する', slug: 'basic', order_number: 1 },
   { id: 23, work_id: 2, name: 'current_userがコメントした最初の投稿を取得する', slug: 'basic', order_number: 2 },
   { id: 24, work_id: 2, name: 'current_userがコメントした投稿を取得する', slug: 'basic', order_number: 3 },
-  { id: 25, work_id: 2, name: 'current_userがいいねした投稿を取得する', slug: 'basic', order_number: 3 },
+  { id: 25, work_id: 2, name: 'current_userの投稿数を取得する', slug: 'basic', order_number: 3 },
   { id: 26, work_id: 2, name: 'current_userがいいねした特定の投稿を取得する', slug: 'basic', order_number: 3 },
 
   # 中級編
@@ -220,8 +220,8 @@ practices = [
     question: 'Lunaがcurrent_userです。Lunaがコメントした「「ハリーポッター」シリーズ、私も大好きです!」という内容のコメントを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.comments.where(content: "「ハリーポッター」シリーズ、私も大好きです!")', order_number: 4 },
   { id: 24, work_id: 2, chapter_id: 24, user_id: 1, title: 'current_userがコメントした投稿を取得する',
     question: 'Johnがcurrent_userです。Johnがコメントした投稿をすべて取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.commented_posts', order_number: 8 },
-  { id: 25, work_id: 2, chapter_id: 25, user_id: 5, title: 'current_userがいいねした投稿を取得する',
-    question: 'Andersonがcurrent_userです。Andersonがいいねした投稿をすべて取得してください', answer: 'current_user.liked_posts', order_number: 3 },
+  { id: 25, work_id: 2, chapter_id: 25, user_id: 5, title: 'current_userの投稿数を取得する',
+    question: 'Andersonがcurrent_userです。Andersonが投稿した件数を取得してください', answer: 'current_user.posts.count', order_number: 3 },
   { id: 26, work_id: 2, chapter_id: 26, user_id: 6, title: 'current_userがいいねした特定の投稿を取得する',
     question: 'Georgeがcurrent_userです。Georgeがいいねした【最近見た映画】という投稿を取得してください', answer: 'current_user.liked_posts.where(title: "最近見た映画")', order_number: 3 },
 
