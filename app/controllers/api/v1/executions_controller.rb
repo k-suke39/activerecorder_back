@@ -54,14 +54,15 @@ module Api
             sql = sql.gsub(placeholder, value.to_s)
           end
 
-          json_data = {
+          log_entry = {
             sql: sql,
             name: event.name,
             duration: event.duration.to_f.round(2)
           }
-          unless logs.map { |log| log[:sql] }.include?(json_data[:sql])
-            logs << json_data
-            logger.debug(json_data.to_json)
+
+          unless logs.map { |log| log[:sql] }.include?(log_entry[:sql])
+            logs << log_entry
+            logger.debug(log_entry.to_json)
           end
         end
 
