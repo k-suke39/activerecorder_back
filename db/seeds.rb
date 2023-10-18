@@ -233,17 +233,15 @@ practices = [
     question: 'Steveがcurrent_userです。Steveのいいねした数を取得してください', answer: 'current_user.likes.count', order_number: 3 },
   { id: 29, work_id: 2, chapter_id: 29, user_id: 1, title: 'current_userのいいね数を取得する',
     question: 'Johnがcurrent_userです。Johnの【最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。】の投稿を取得してください', answer: 'current_user.posts.where(body: "最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。")', order_number: 3 },
-    
+
   # 中級編
   { id: 40, work_id: 3, chapter_id: 40, user_id: 3, title: 'current_userがコメントした全てのユーザーを取得する',
     question: 'Steveがcurrent_userです。Steveがコメントした全てのユーザーを取得するためには、どのようにコードを書くべきでしょうか？', answer: 'current_user.comments.map { |comment| comment.post.user }.uniq', order_number: 1 },
   { id: 41, work_id: 3, chapter_id: 41, user_id: 10,
     title: 'current_userがコメントした投稿の中で最も多くいいねされた投稿を取得する', question: 'Billがcurrent_userです。Billがコメントした投稿の中で最も多くいいねされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.comments.map(&:post).max_by { |post| post.likes.count }', order_number: 3 },
   { id: 42, work_id: 3, chapter_id: 42, user_id: 5, title: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する',
-    question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くコメントされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 }  
+    question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くコメントされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 }
 ]
-
-
 
 practices.each do |practice|
   Practice.create!(practice)
