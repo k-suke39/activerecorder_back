@@ -19,4 +19,11 @@ RSpec.describe "Api::V1::Executions", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "GET /api/v1/executions/sql" do
+    it "returns 200 status" do
+      get sql_api_v1_executions_path, params: { active_record_string: "current_user" }
+      expect(response).to have_http_status(200)
+    end
+  end
 end
