@@ -115,7 +115,6 @@ module Api
           'delete_by',
           'reverse',
           'split',
-          'join',
           'find_by_sql',
           'ActiveRecord::Base',
           'connection',
