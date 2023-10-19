@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+PostCategory.destroy_all
+PostTag.destroy_all
+Category.destroy_all
+Tag.destroy_all
+
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
@@ -7,6 +12,7 @@ Like.destroy_all
 Practice.destroy_all
 Work.destroy_all
 Chapter.destroy_all
+
 
 users = [
   { id: 1, password: 'xxxxxxxxxx', email: 'john@example.com', name: 'John' },
@@ -156,6 +162,126 @@ likes.each do |like|
   Like.create!(like)
 end
 
+categories = [
+  { id: 1, name: '料理' },
+  { id: 2, name: '思い出' },
+  { id: 3, name: 'イベント' },
+  { id: 4, name: '目標' },
+  { id: 5, name: '映画' },
+  { id: 6, name: '趣味' },
+  { id: 7, name: '仕事' },
+]
+
+
+post_categories = [
+  { id: 1, post_id: 1, category_id: 4 },
+  { id: 2, post_id: 2, category_id: 2},
+  { id: 3, post_id: 3, category_id: 1},
+  { id: 4, post_id: 4, category_id: 2},
+  { id: 5, post_id: 5, category_id: 5},
+  { id: 6, post_id: 6, category_id: 6},
+  { id: 7, post_id: 7, category_id: 3},
+  { id: 8, post_id: 8, category_id: 6},
+  { id: 9, post_id: 9, category_id: 6},
+  { id: 10, post_id: 10, category_id: 2},
+  { id: 11, post_id: 11, category_id: 1},
+  { id: 12, post_id: 12, category_id: 6},
+  { id: 13, post_id: 13, category_id: 4},
+  { id: 14, post_id: 14, category_id: 6},
+  { id: 15, post_id: 15, category_id: 5},
+  { id: 16, post_id: 16, category_id: 6},
+  { id: 17, post_id: 17, category_id: 1},
+  { id: 18, post_id: 18, category_id: 5},
+  { id: 19, post_id: 19, category_id: 4},
+  { id: 20, post_id: 20, category_id: 6},
+  { id: 21, post_id: 21, category_id: 7},
+  { id: 22, post_id: 22, category_id: 6},
+  { id: 23, post_id: 23, category_id: 5},
+  { id: 24, post_id: 24, category_id: 2},
+  { id: 25, post_id: 25, category_id: 1},
+  { id: 26, post_id: 26, category_id: 6},
+  { id: 27, post_id: 27, category_id: 2},
+  { id: 28, post_id: 28, category_id: 2},
+  { id: 29, post_id: 29, category_id: 5},
+  { id: 30, post_id: 30, category_id: 6}
+]
+
+
+categories.each do |category|
+  Category.create!(category)
+end
+
+post_categories.each do |category|
+  PostCategory.create!(category)
+end
+
+
+tags = [
+  { id: 1, name: 'レストラン' },
+  { id: 2, name: '新作' },
+  { id: 3, name: '家族旅行' },
+  { id: 4, name: '週末' },
+  { id: 5, name: 'アーティスト' },
+  { id: 6, name: '初投稿' },
+  { id: 7, name: 'ジブリ' },
+  { id: 8, name: '新年' },
+  { id: 9, name: '健康' },
+  { id: 10, name: '寿司' },
+  { id: 11, name: 'キングダム' },
+  { id: 12, name: '小説' },
+  { id: 13, name: 'リラックス' },
+  { id: 14, name: 'ハリーポッター' },
+  { id: 15, name: 'アベンジャーズ' },
+  { id: 16, name: 'スターウォーズ' },
+  { id: 17, name: 'ピクニック' },
+  { id: 18, name: 'チキンカレー' },
+  { id: 19, name: 'レシピ' },
+  { id: 20, name: '新年' }
+]
+
+
+post_tags = [
+  { id: 1, post_id: 3, tag_id: 1 },
+  { id: 2, post_id: 4, tag_id: 3 },
+  { id: 3, post_id: 5, tag_id: 5 },
+  { id: 4, post_id: 6, tag_id: 6 },
+  { id: 5, post_id: 7, tag_id: 1 },
+  { id: 6, post_id: 8, tag_id: 6 },
+  { id: 7, post_id: 9, tag_id: 7 },
+  { id: 8, post_id: 13, tag_id: 9 },
+  { id: 9, post_id: 14, tag_id: 5 },
+  { id: 10, post_id: 15, tag_id: 11 },
+  { id: 11, post_id: 16, tag_id: 12 },
+  { id: 12, post_id: 18, tag_id: 13 },
+  { id: 13, post_id: 19, tag_id: 14 },
+  { id: 14, post_id: 20 , tag_id: 5 },
+  { id: 15, post_id: 21 , tag_id: 9 },
+  { id: 16, post_id: 22 , tag_id: 6 },
+  { id: 17, post_id: 23 , tag_id: 14 },
+  { id: 18, post_id: 24 , tag_id: 4 },
+  { id: 19, post_id: 25 , tag_id: 1 },
+  { id: 20, post_id: 26 , tag_id: 8 },
+  { id: 21, post_id: 27 , tag_id: 6 },
+  { id: 22, post_id: 28 , tag_id: 6 },
+  { id: 23, post_id: 29 , tag_id: 6 },
+  { id: 24, post_id: 30 , tag_id: 6 },
+  { id: 25, post_id: 1 , tag_id: 6 },
+  { id: 26, post_id: 2 , tag_id: 6 },
+  { id: 27, post_id: 10 , tag_id: 6 },
+  { id: 28, post_id: 11 , tag_id: 6 },
+  { id: 29, post_id: 12 , tag_id: 6 },
+  { id: 30, post_id: 17 , tag_id: 6 }
+]
+
+tags.each do |tag|
+  Tag.create!(tag)
+end
+
+post_tags.each do |tag|
+  PostTag.create!(tag)
+end
+
+
 works = [
   { id: 1, name: 'トライアル編', description: '操作に慣れてみよう!', slug: 'trial', order_number: 1 },
   { id: 2, name: '初級編', description: 'current_userを使ってデータを取得してみよう!', slug: 'basic', order_number: 1 },
@@ -188,11 +314,9 @@ chapters = [
 
   # 中級編
   { id: 40, work_id: 3, name: 'current_userがコメントした全てのユーザーを取得する', slug: 'intermediate', order_number: 1 },
-  { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',
-    order_number: 2 },
-  { id: 42, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate',
-    order_number: 2 }
-
+  { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',order_number: 2 },
+  { id: 42, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate',order_number: 2 },
+  { id: 43, work_id: 3, name: 'current_userの投稿に紐づくカテゴリを全て取得する', slug: 'intermediate', order_number: 1 },
 ]
 
 chapters.each do |chapter|
@@ -240,7 +364,9 @@ practices = [
   { id: 41, work_id: 3, chapter_id: 41, user_id: 10,
     title: 'current_userがコメントした投稿の中で最も多くいいねされた投稿を取得する', question: 'Billがcurrent_userです。Billがコメントした投稿の中で最も多くいいねされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.comments.map(&:post).max_by { |post| post.likes.count }', order_number: 3 },
   { id: 42, work_id: 3, chapter_id: 42, user_id: 5, title: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する',
-    question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くコメントされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 }
+    question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くコメントされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 },
+  { id: 43, work_id: 3, chapter_id: 43, user_id: 1, title: 'current_userの投稿に紐づくカテゴリを全て取得する',
+      question: 'Johnがcurrent_userです。Johnに紐づくカテゴリを全て取得してください。', answer: 'current_user.posts.joins(:categories).pluck("categories.name").uniq', order_number: 1 }
 ]
 
 practices.each do |practice|
