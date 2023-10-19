@@ -70,7 +70,7 @@ module Api
         result = result.to_a if result.is_a?(ActiveRecord::Relation)
 
         ActiveSupport::Notifications.unsubscribe "sql.active_record"
-        {sql: logs.map { |log| log[:sql] }.join(";")}
+        {sql: logs.map { |log| log[:sql] }.join(";") + ";"}
       end
 
       def check_strings(input, strings)
