@@ -70,8 +70,7 @@ module Api
 
         ActiveSupport::Notifications.unsubscribe "sql.active_record"
         sql_logs = logs.map { |log| log[:sql] }
-          {sql: sql_logs.empty? ? "" : sql_logs.join(";") + ";"}
-        end
+        {sql: sql_logs.empty? ? "" : sql_logs.join(";") + ";"}
       end
 
       def check_strings(input, strings)
