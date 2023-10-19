@@ -317,6 +317,9 @@ chapters = [
   { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',order_number: 2 },
   { id: 42, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate',order_number: 2 },
   { id: 43, work_id: 3, name: 'current_userの投稿に紐づくカテゴリを全て取得する', slug: 'intermediate', order_number: 1 },
+  { id: 44, work_id: 3, name: 'current_userの投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
+  { id: 45, work_id: 3, name: 'current_userの投稿に紐づくタグ数を取得する', slug: 'intermediate',order_number: 2 },
+  { id: 46, work_id: 3, name: 'current_userの投稿に紐づくカテゴリ数を取得する', slug: 'intermediate',order_number: 2 },
 ]
 
 chapters.each do |chapter|
@@ -366,7 +369,13 @@ practices = [
   { id: 42, work_id: 3, chapter_id: 42, user_id: 5, title: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する',
     question: 'Andersonがcurrent_userです。Andersonがいいねをした全ての投稿の中で最も多くコメントされたものを取得するためには、どのように書くべきでしょうか？', answer: 'current_user.likes.map(&:post).max_by { |post| post.comments.count }', order_number: 3 },
   { id: 43, work_id: 3, chapter_id: 43, user_id: 1, title: 'current_userの投稿に紐づくカテゴリを全て取得する',
-      question: 'Johnがcurrent_userです。Johnに紐づくカテゴリを全て取得してください。', answer: 'current_user.posts.joins(:categories).pluck("categories.name").uniq', order_number: 1 }
+    question: 'Johnがcurrent_userです。Johnに紐づくカテゴリを全て取得してください。', answer: 'current_user.posts.joins(:categories).pluck("categories.name").uniq', order_number: 1 },
+  { id: 44, work_id: 3, chapter_id: 44, user_id: 3, title: 'current_userの投稿に紐づくタグを全て取得する',
+    question: 'Steveがcurrent_userです。Steveに紐づくタグを全て取得してください。', answer: 'current_user.posts.joins(:tags).pluck("tags.name").uniq', order_number: 1 },
+  { id: 45, work_id: 3, chapter_id: 45, user_id: 10,title: 'current_userの投稿に紐づくタグ数を取得する', 
+    question: 'Billがcurrent_userです。Billに紐づく投稿の全てのタグの数を取得してください。', answer: 'current_user.posts.joins(:tags).count', order_number: 3 },
+  { id: 46, work_id: 3, chapter_id: 46, user_id: 5, title: 'current_userの投稿に紐づくカテゴリ数を取得する',
+    question: 'Andersonがcurrent_userです。Andersonに紐づく投稿の全てカテゴリ数を取得してください。', answer: 'current_user.posts.joins(:categories).count', order_number: 3 }
 ]
 
 practices.each do |practice|
