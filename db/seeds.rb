@@ -361,7 +361,7 @@ practices = [
     question: 'Johnがcurrent_userです。Johnのコメントした数を取得してください', answer: 'current_user.comments.count', order_number: 3 },
   { id: 28, work_id: 2, chapter_id: 28, user_id: 3, title: 'current_userのいいね数を取得する',
     question: 'Steveがcurrent_userです。Steveのいいねした数を取得してください', answer: 'current_user.likes.count', order_number: 3 },
-  { id: 29, work_id: 2, chapter_id: 29, user_id: 1, title: 'current_userのいいね数を取得する',
+  { id: 29, work_id: 2, chapter_id: 29, user_id: 1, title: 'current_userの特定の内容の投稿を取得する',
     question: 'Johnがcurrent_userです。Johnの【最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。】の投稿を取得してください', answer: 'current_user.posts.where(body: "最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。")', order_number: 3 },
 
   # 中級編
