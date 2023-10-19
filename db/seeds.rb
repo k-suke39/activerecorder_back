@@ -350,7 +350,7 @@ practices = [
   { id: 22, work_id: 2, chapter_id: 22, user_id: 4, title: 'current_userが投稿した特定のタイトルの投稿を取得する',
     question: 'Michaelがcurrent_userです。Michaelが投稿した「仕事の話」のタイトルの投稿を取得してください', answer: 'current_user.posts.where(title: "仕事の話")', order_number: 3 },
   { id: 23, work_id: 2, chapter_id: 23, user_id: 9, title: 'current_userがコメントした特定の内容のコメントを取得する',
-    question: 'Lunaがcurrent_userです。Lunaがコメントした「「ハリーポッター」シリーズ、私も大好きです!」という内容のコメントを取得してください', answer: 'current_user.comments.where(content: "「ハリーポッター」シリーズ、私も大好きです!")', order_number: 4 },
+    question: 'Lunaがcurrent_userです。Lunaがコメントした「ハリーポッター」シリーズ、私も大好きです!」という内容のコメントを取得してください', answer: 'current_user.comments.where(content: "「ハリーポッター」シリーズ、私も大好きです!")', order_number: 4 },
   { id: 24, work_id: 2, chapter_id: 24, user_id: 1, title: 'current_userがコメントした投稿を取得する',
     question: 'Johnがcurrent_userです。Johnがコメントした投稿をすべて取得してください', answer: 'current_user.commented_posts', order_number: 8 },
   { id: 25, work_id: 2, chapter_id: 25, user_id: 5, title: 'current_userの投稿数を取得する',
