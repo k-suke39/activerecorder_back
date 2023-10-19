@@ -380,9 +380,9 @@ practices = [
   { id: 46, work_id: 3, chapter_id: 46, user_id: 5, title: 'current_userの投稿に紐づくカテゴリ数を取得する',
     question: 'Andersonがcurrent_userです。Andersonに紐づく投稿の全てカテゴリ数を取得してください。', answer: 'current_user.posts.joins(:categories).count', order_number: 3 },
   { id: 47, work_id: 3, chapter_id: 47, user_id: 6, title: 'current_userがコメントした投稿に紐づくタグを全て取得する',
-    question: 'Georgeがcurrent_userです。Georgeがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.commented_posts.joins(:tags).pluck("tags.name")', order_number: 3 },
+    question: 'Georgeがcurrent_userです。Georgeがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.commented_posts.joins(:tags).pluck("tags.name").uniq', order_number: 3 },
   { id: 48, work_id: 3, chapter_id: 48, user_id: 7, title: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する',
-    question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name")', order_number: 3 },
+    question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name").uniq', order_number: 3 },
   { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
     question: 'Lunaがcurrent_userです。Lunaががコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:categories).where("categories.name = ?", "料理")', order_number: 3 },
 ]
