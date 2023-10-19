@@ -46,7 +46,6 @@ module Api
           sql = event.payload[:sql]
           binds = event.payload[:binds].map(&:value)
 
-          # ActiveRecordの内部クエリを無視
           next unless sql.start_with?("SELECT \"") || sql.start_with?("SELECT COUNT")
 
           binds.each_with_index do |value, i|
@@ -70,7 +69,9 @@ module Api
         result = result.to_a if result.is_a?(ActiveRecord::Relation)
 
         ActiveSupport::Notifications.unsubscribe "sql.active_record"
-        {sql: logs.map { |log| log[:sql] }.join(";") + ";"}
+        sql_logs = logs.map { |log| log[:sql] }
+          {sql: sql_logs.empty? ? "" : sql_logs.join(";") + ";"}
+        end
       end
 
       def check_strings(input, strings)
