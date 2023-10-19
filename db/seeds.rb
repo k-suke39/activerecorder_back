@@ -304,7 +304,7 @@ chapters = [
   { id: 20, work_id: 2, name: 'current_userの投稿を取得する', slug: 'basic', order_number: 4 },
   { id: 21, work_id: 2, name: 'current_userのコメントを取得する', slug: 'basic', order_number: 5 },
   { id: 22, work_id: 2, name: 'current_userが投稿した特定のタイトルの投稿を取得する', slug: 'basic', order_number: 1 },
-  { id: 23, work_id: 2, name: 'current_userがコメントした最初の投稿を取得する', slug: 'basic', order_number: 2 },
+  { id: 23, work_id: 2, name: 'current_userがコメントした特定の内容のコメントを取得する', slug: 'basic', order_number: 2 },
   { id: 24, work_id: 2, name: 'current_userがコメントした投稿を取得する', slug: 'basic', order_number: 3 },
   { id: 25, work_id: 2, name: 'current_userの投稿数を取得する', slug: 'basic', order_number: 3 },
   { id: 26, work_id: 2, name: 'current_userがいいねした特定の投稿を取得する', slug: 'basic', order_number: 3 },
@@ -320,6 +320,9 @@ chapters = [
   { id: 44, work_id: 3, name: 'current_userの投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
   { id: 45, work_id: 3, name: 'current_userの投稿に紐づくタグ数を取得する', slug: 'intermediate',order_number: 2 },
   { id: 46, work_id: 3, name: 'current_userの投稿に紐づくカテゴリ数を取得する', slug: 'intermediate',order_number: 2 },
+  { id: 47, work_id: 3, name: 'current_userがコメントした投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
+  { id: 48, work_id: 3, name: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する', slug: 'intermediate',order_number: 2 },
+  { id: 49, work_id: 3, name: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿をすべて取得する', slug: 'intermediate',order_number: 2 },
 ]
 
 chapters.each do |chapter|
@@ -375,7 +378,13 @@ practices = [
   { id: 45, work_id: 3, chapter_id: 45, user_id: 10,title: 'current_userの投稿に紐づくタグ数を取得する', 
     question: 'Billがcurrent_userです。Billに紐づく投稿の全てのタグの数を取得してください。', answer: 'current_user.posts.joins(:tags).count', order_number: 3 },
   { id: 46, work_id: 3, chapter_id: 46, user_id: 5, title: 'current_userの投稿に紐づくカテゴリ数を取得する',
-    question: 'Andersonがcurrent_userです。Andersonに紐づく投稿の全てカテゴリ数を取得してください。', answer: 'current_user.posts.joins(:categories).count', order_number: 3 }
+    question: 'Andersonがcurrent_userです。Andersonに紐づく投稿の全てカテゴリ数を取得してください。', answer: 'current_user.posts.joins(:categories).count', order_number: 3 },
+  { id: 47, work_id: 3, chapter_id: 47, user_id: 6, title: 'current_userがコメントした投稿に紐づくタグを全て取得する',
+    question: 'Georgeがcurrent_userです。Georgeがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.commented_posts.joins(:tags).pluck("tags.name")', order_number: 3 },
+  { id: 48, work_id: 3, chapter_id: 48, user_id: 7, title: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する',
+    question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name")', order_number: 3 },
+  { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
+    question: 'Lunaがcurrent_userです。Lunaががコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:categories).where("categories.name = ?", "料理")', order_number: 3 },
 ]
 
 practices.each do |practice|
