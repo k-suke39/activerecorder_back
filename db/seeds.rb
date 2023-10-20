@@ -367,7 +367,7 @@ chapters = [
   # 上級編
   { id: 60, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', slug: 'advanced', order_number: 1 },
   { id: 61, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する', slug: 'advanced', order_number: 1 },
-  { id: 62, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得する', slug: 'advanced',order_number: 2 },
+  { id: 62, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くの投稿を「いいね」したユーザーを取得する', slug: 'advanced',order_number: 2 },
   { id: 63, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得する', slug: 'advanced',order_number: 2 },
   { id: 64, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くのコメントを持つユーザーを取得する', slug: 'advanced',order_number: 2 },
 ]
@@ -437,8 +437,8 @@ practices = [
     question: 'Billがcurrent_userです。Billがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得してください。', answer: 'Post.joins(:likes).where(user: current_user.following).group("posts.id").order("count(likes.id) desc").first', order_number: 3 },
   { id: 61, work_id: 4, chapter_id: 61, user_id: 5, title: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する',
     question: 'Andersonがcurrent_userです。Andersonがcurrent_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得してください。', answer: 'current_user.following.joins(:posts).group("users.id").order("count(posts.id) desc").first', order_number: 3 },
-  { id: 62, work_id: 4, chapter_id: 62, user_id: 6, title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得する',
-    question: 'Georgeがcurrent_userです。Georgeがcurrent_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得してください。', answer: 'Post.where(user: current_user.following).order(created_at: :desc).first', order_number: 3 },
+  { id: 62, work_id: 4, chapter_id: 62, user_id: 6, title: 'current_userがフォローしているユーザーの中で、最も多くの投稿を「いいね」したユーザーを取得する',
+    question: 'Georgeがcurrent_userです。Georgeがフォローしているユーザーの中で、最も多くの投稿を「いいね」したユーザーを取得してください。', answer: 'current_user.following.joins(:liked_posts).group("users.id").order("count(likes.id) desc").first', order_number: 3 },
   { id: 63, work_id: 4, chapter_id: 63, user_id: 7, title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得する',
     question: 'Lilyがcurrent_userです。Lilyがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得してください。', answer: 'Post.joins(:tags).where(user: current_user.following).group("posts.id").order("count(tags.id) desc").first', order_number: 3 },
   { id: 64, work_id: 4, chapter_id: 64, user_id: 9, title: 'current_userがフォローしているユーザーの中で、最も多くのコメントを持つユーザーを取得する',
