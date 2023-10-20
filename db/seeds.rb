@@ -5,6 +5,7 @@ PostTag.destroy_all
 Category.destroy_all
 Tag.destroy_all
 
+Follow.destroy_all
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
@@ -27,8 +28,45 @@ users = [
   { id: 10, password: 'xxxxxxxxxx', email: 'Bill@example.com', name: 'Bill' }
 ]
 
+follows = [
+  { id: 1, follower_id: 1, followed_id: 2},
+  { id: 2, follower_id: 2, followed_id: 3},
+  { id: 3, follower_id: 3, followed_id: 4},
+  { id: 4, follower_id: 4, followed_id: 5},
+  { id: 5, follower_id: 5, followed_id: 6},
+  { id: 6, follower_id: 6, followed_id: 7},
+  { id: 7, follower_id: 7, followed_id: 8},
+  { id: 8, follower_id: 8, followed_id: 9},
+  { id: 9, follower_id: 9, followed_id: 10},
+  { id: 10, follower_id: 10, followed_id: 1},
+  { id: 11, follower_id: 1, followed_id: 3},
+  { id: 12, follower_id: 2, followed_id: 4},
+  { id: 13, follower_id: 3, followed_id: 5},
+  { id: 14, follower_id: 4, followed_id: 6},
+  { id: 15, follower_id: 5, followed_id: 7},
+  { id: 16, follower_id: 6, followed_id: 8},
+  { id: 17, follower_id: 7, followed_id: 9},
+  { id: 18, follower_id: 8, followed_id: 10},
+  { id: 19, follower_id: 9, followed_id: 1},
+  { id: 20, follower_id: 10, followed_id: 2},
+  { id: 21, follower_id: 1, followed_id: 4},
+  { id: 22, follower_id: 2, followed_id: 5},
+  { id: 23, follower_id: 3, followed_id: 6},
+  { id: 24, follower_id: 4, followed_id: 7},
+  { id: 25, follower_id: 5, followed_id: 8},
+  { id: 26, follower_id: 6, followed_id: 9},
+  { id: 27, follower_id: 7, followed_id: 10},
+  { id: 28, follower_id: 8, followed_id: 1},
+  { id: 29, follower_id: 9, followed_id: 2},
+  { id: 30, follower_id: 10, followed_id: 3}
+]
+
 users.each do |user|
   User.create!(user)
+end
+
+follows.each do |follower|
+  Follow.create!(follower)
 end
 
 posts = [
@@ -286,7 +324,9 @@ works = [
   { id: 1, name: 'トライアル編', description: '操作に慣れてみよう!', slug: 'trial', order_number: 1 },
   { id: 2, name: '初級編', description: 'current_userを使ってデータを取得してみよう!', slug: 'basic', order_number: 1 },
   { id: 3, name: '中級編', description: 'current_userを使って複雑なデータを取得してみよう!', slug: 'intermediate',
-    order_number: 1 }
+    order_number: 1 },
+  { id: 4, name: '上級編', description: '複雑な問題にチャレンジしてみよう！', slug: 'advanced',
+      order_number: 1 },
 ]
 
 works.each do |work|
@@ -323,6 +363,13 @@ chapters = [
   { id: 47, work_id: 3, name: 'current_userがコメントした投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
   { id: 48, work_id: 3, name: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する', slug: 'intermediate',order_number: 2 },
   { id: 49, work_id: 3, name: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿をすべて取得する', slug: 'intermediate',order_number: 2 },
+
+  # 上級編
+  { id: 60, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', slug: 'advanced', order_number: 1 },
+  { id: 61, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する', slug: 'advanced', order_number: 1 },
+  { id: 62, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得する', slug: 'advanced',order_number: 2 },
+  { id: 63, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得する', slug: 'advanced',order_number: 2 },
+  { id: 64, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くのコメントを持つユーザーを取得する', slug: 'advanced',order_number: 2 },
 ]
 
 chapters.each do |chapter|
@@ -384,7 +431,18 @@ practices = [
   { id: 48, work_id: 3, chapter_id: 48, user_id: 7, title: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する',
     question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name").uniq', order_number: 3 },
   { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
-    question: 'Lunaがcurrent_userです。Lunaががコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:categories).where("categories.name = ?", "料理")', order_number: 3 },
+    question: 'Lunaがcurrent_userです。Lunaがコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:categories).where("categories.name = ?", "料理")', order_number: 3 },
+
+  { id: 60, work_id: 4, chapter_id: 60, user_id: 10,title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', 
+    question: 'Billがcurrent_userです。Billがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得してください。', answer: 'Post.joins(:likes).where(user: current_user.following).group("posts.id").order("count(likes.id) desc").first', order_number: 3 },
+  { id: 61, work_id: 4, chapter_id: 61, user_id: 5, title: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する',
+    question: 'Andersonがcurrent_userです。Andersonがcurrent_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得してください。', answer: 'current_user.following.joins(:posts).group("users.id").order("count(posts.id) desc").first', order_number: 3 },
+  { id: 62, work_id: 4, chapter_id: 62, user_id: 6, title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得する',
+    question: 'Georgeがcurrent_userです。Georgeがcurrent_userがフォローしているユーザーが投稿した投稿の中で、最も新しい投稿を取得してください。', answer: 'Post.where(user: current_user.following).order(created_at: :desc).first', order_number: 3 },
+  { id: 63, work_id: 4, chapter_id: 63, user_id: 7, title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得する',
+    question: 'Lilyがcurrent_userです。Lilyがフォローしているユーザーが投稿した投稿の中で、最も多くのタグが付けられている投稿を取得してください。', answer: 'Post.joins(:tags).where(user: current_user.following).group("posts.id").order("count(tags.id) desc").first', order_number: 3 },
+  { id: 64, work_id: 4, chapter_id: 64, user_id: 9, title: 'current_userがフォローしているユーザーの中で、最も多くのコメントを持つユーザーを取得する',
+    question: 'Lunaがcurrent_userです。Lunaがフォローしているユーザーの中で、最も多くのコメントを持つユーザーを取得してください。', answer: 'current_user.following.joins(:comments).group("users.id").order("count(comments.id) desc").first', order_number: 3 },
 ]
 
 practices.each do |practice|
