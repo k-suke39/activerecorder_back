@@ -387,7 +387,7 @@ practices = [
   { id: 4, work_id: 1, chapter_id: 4, user_id: 6, title: '他のデータも取得してみよう！',
     question: '投稿の一覧を取得してみましょう。', answer: 'Post.all', order_number: 4 },
   { id: 5, work_id: 1, chapter_id: 5, user_id: 2, title: 'whereメソッドを使ってみよう!',
-    question: '投稿のタイトルが【最近のレシピ】に該当するレコードを取得してみましょう。', answer: 'Post.find_by(title: "最近のレシピ")', order_number: 5 },
+    question: '投稿のタイトルが【最近のレシピ】に該当するレコードを取得してみましょう。', answer: 'Post.where(title: "最近のレシピ")', order_number: 5 },
 
   # 初級編
   { id: 20, work_id: 2, chapter_id: 20, user_id: 7, title: 'current_userの投稿を取得する',
