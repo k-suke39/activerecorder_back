@@ -325,7 +325,7 @@ works = [
   { id: 2, name: '初級編', description: 'current_userを使ってデータを取得してみよう!', slug: 'basic', order_number: 1 },
   { id: 3, name: '中級編', description: 'current_userを使って複雑なデータを取得してみよう!', slug: 'intermediate',
     order_number: 1 },
-  { id: 4, name: '上級編', description: '複雑な問題にチャレンジしてみよう！', slug: 'advanced',
+  { id: 4, name: '上級編', description: '複数テーブルの複雑な条件でデータを取得してみよう!', slug: 'advanced',
       order_number: 1 },
 ]
 
