@@ -432,7 +432,7 @@ practices = [
     question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name").uniq', order_number: 3 },
   { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
     question: 'Lunaがcurrent_userです。Lunaがコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:categories).where("categories.name = ?", "料理")', order_number: 3 },
-
+  # 上級編
   { id: 60, work_id: 4, chapter_id: 60, user_id: 10,title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', 
     question: 'Billがcurrent_userです。Billがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得してください。', answer: 'Post.joins(:likes).where(user: current_user.following).group("posts.id").order("count(likes.id) desc").first', order_number: 3 },
   { id: 61, work_id: 4, chapter_id: 61, user_id: 5, title: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する',
