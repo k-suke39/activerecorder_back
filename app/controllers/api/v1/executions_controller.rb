@@ -46,6 +46,7 @@ module Api
           sql = event.payload[:sql]
           binds = event.payload[:binds].map(&:value)
 
+          next if sql.start_with?("SELECT \"works\"", "SELECT \"chapters\"", "SELECT \"practices\"")
           next unless sql.start_with?("SELECT \"") || sql.start_with?("SELECT COUNT")
 
           binds.each_with_index do |value, i|
