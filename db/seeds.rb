@@ -382,7 +382,7 @@ practices = [
     question: 'Johnがcurrent_userです。current_userとエディタに書いて実行すれば正解です。', answer: 'current_user', order_number: 1 },
   { id: 2, work_id: 1, chapter_id: 2, user_id: 5, title: 'allメソッドを使ってみよう!',
     question: 'ユーザの一覧を取得してみましょう。', answer: 'User.all', order_number: 2 },
-  { id: 3, work_id: 1, chapter_id: 3, user_id: 3, title: 'find_byメソッドを使ってみよう!',
+  { id: 3, work_id: 1, chapter_id: 3, user_id: 8, title: 'find_byメソッドを使ってみよう!',
     question: 'ユーザのidが8のレコードを取得してみましょう。', answer: 'User.find_by(id: 8)', order_number: 3 },
   { id: 4, work_id: 1, chapter_id: 4, user_id: 6, title: '他のデータも取得してみよう！',
     question: '投稿の一覧を取得してみましょう。', answer: 'Post.all', order_number: 4 },
