@@ -429,7 +429,7 @@ practices = [
   { id: 47, work_id: 3, chapter_id: 47, user_id: 6, title: 'current_userがコメントした投稿に紐づくタグを全て取得する',
     question: 'Georgeがcurrent_userです。Georgeがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.commented_posts.joins(:tags).pluck("tags.name").uniq', order_number: 3 },
   { id: 48, work_id: 3, chapter_id: 48, user_id: 7, title: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する',
-    question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name").uniq', order_number: 3 },
+    question: 'Lilyがcurrent_userです。Lilyがコメントした投稿に紐づくタグを全て取得してください。', answer: 'current_user.commented_posts.joins(:tags).pluck("tags.name").uniq', order_number: 3 },
   { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
     question: 'Lunaがcurrent_userです。Lunaがコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:tags).where("tags.name = ?", "レストラン")', order_number: 3 },
   # 上級編
