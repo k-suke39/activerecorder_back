@@ -391,7 +391,7 @@ practices = [
 
   # 初級編
   { id: 20, work_id: 2, chapter_id: 20, user_id: 7, title: 'current_userの投稿を取得する',
-    question: 'Lilyがcurrent_userです。Lilyの投稿をすべて取得してください', answer: 'current_user.posts', order_number: 4 },
+    question: 'Lilyがcurrent_userです。Lilyの投稿をすべて取得してください。', answer: 'current_user.posts', order_number: 4 },
   { id: 21, work_id: 2, chapter_id: 21, user_id: 3, title: 'current_userのコメントを取得する',
     question: 'Steveがcurrent_userです。Steveが書いたコメントをすべて取得してください', answer: 'current_user.comments', order_number: 5 },
   { id: 22, work_id: 2, chapter_id: 22, user_id: 4, title: 'current_userが投稿した特定のタイトルの投稿を取得する',
