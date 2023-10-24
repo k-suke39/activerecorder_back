@@ -323,10 +323,8 @@ end
 works = [
   { id: 1, name: 'トライアル編', description: '操作に慣れてみよう!', slug: 'trial', order_number: 1 },
   { id: 2, name: '初級編', description: 'current_userを使ってデータを取得してみよう!', slug: 'basic', order_number: 1 },
-  { id: 3, name: '中級編', description: 'current_userを使って複雑なデータを取得してみよう!', slug: 'intermediate',
-    order_number: 1 },
-  { id: 4, name: '上級編', description: '複数テーブルの複雑な条件でデータを取得してみよう!', slug: 'advanced',
-      order_number: 1 },
+  { id: 3, name: '中級編', description: '複雑な条件でデータを取得してみよう!', slug: 'intermediate',order_number: 1 },
+  { id: 4, name: '上級編', description: '複数テーブルの複雑な条件でデータを取得してみよう!', slug: 'advanced', order_number: 1 },
 ]
 
 works.each do |work|
@@ -393,23 +391,23 @@ practices = [
   { id: 20, work_id: 2, chapter_id: 20, user_id: 7, title: 'current_userの投稿を取得する',
     question: 'Lilyがcurrent_userです。Lilyの投稿をすべて取得してください。', answer: 'current_user.posts', order_number: 4 },
   { id: 21, work_id: 2, chapter_id: 21, user_id: 3, title: 'current_userのコメントを取得する',
-    question: 'Steveがcurrent_userです。Steveが書いたコメントをすべて取得してください', answer: 'current_user.comments', order_number: 5 },
+    question: 'Steveがcurrent_userです。Steveが書いたコメントをすべて取得してください。', answer: 'current_user.comments', order_number: 5 },
   { id: 22, work_id: 2, chapter_id: 22, user_id: 4, title: 'current_userが投稿した特定のタイトルの投稿を取得する',
-    question: 'Michaelがcurrent_userです。Michaelが投稿した「仕事の話」のタイトルの投稿を取得してください', answer: 'current_user.posts.where(title: "仕事の話")', order_number: 3 },
+    question: 'Michaelがcurrent_userです。Michaelが投稿した「仕事の話」のタイトルの投稿を取得してください。', answer: 'current_user.posts.where(title: "仕事の話")', order_number: 3 },
   { id: 23, work_id: 2, chapter_id: 23, user_id: 9, title: 'current_userがコメントした特定の内容のコメントを取得する',
-    question: 'Lunaがcurrent_userです。Lunaがコメントした「ハリーポッター」シリーズ、私も大好きです!という内容のコメントを取得してください', answer: 'current_user.comments.where(content: "「ハリーポッター」シリーズ、私も大好きです!")', order_number: 4 },
+    question: 'Lunaがcurrent_userです。Lunaがコメントした「ハリーポッター」シリーズ、私も大好きです!」という内容のコメントを取得してください。', answer: 'current_user.comments.where(content: "「ハリーポッター」シリーズ、私も大好きです!")', order_number: 4 },
   { id: 24, work_id: 2, chapter_id: 24, user_id: 1, title: 'current_userがコメントした投稿を取得する',
-    question: 'Johnがcurrent_userです。Johnがコメントした投稿をすべて取得してください', answer: 'current_user.commented_posts', order_number: 8 },
+    question: 'Johnがcurrent_userです。Johnがコメントした投稿をすべて取得してください。', answer: 'current_user.commented_posts', order_number: 8 },
   { id: 25, work_id: 2, chapter_id: 25, user_id: 5, title: 'current_userの投稿数を取得する',
-    question: 'Andersonがcurrent_userです。Andersonが投稿した件数を取得してください', answer: 'current_user.posts.count', order_number: 3 },
+    question: 'Andersonがcurrent_userです。Andersonが投稿した件数を取得してください。', answer: 'current_user.posts.count', order_number: 3 },
   { id: 26, work_id: 2, chapter_id: 26, user_id: 6, title: 'current_userがいいねした特定の投稿を取得する',
-    question: 'Georgeがcurrent_userです。Georgeがいいねした【最近見た映画】という投稿を取得してください', answer: 'current_user.liked_posts.where(title: "最近見た映画")', order_number: 3 },
+    question: 'Georgeがcurrent_userです。Georgeがいいねした【最近見た映画】という投稿を取得してください。', answer: 'current_user.liked_posts.where(title: "最近見た映画")', order_number: 3 },
   { id: 27, work_id: 2, chapter_id: 27, user_id: 1, title: 'current_userのコメント数を取得する',
-    question: 'Johnがcurrent_userです。Johnのコメントした数を取得してください', answer: 'current_user.comments.count', order_number: 3 },
+    question: 'Johnがcurrent_userです。Johnのコメントした数を取得してください。', answer: 'current_user.comments.count', order_number: 3 },
   { id: 28, work_id: 2, chapter_id: 28, user_id: 3, title: 'current_userのいいね数を取得する',
-    question: 'Steveがcurrent_userです。Steveのいいねした数を取得してください', answer: 'current_user.likes.count', order_number: 3 },
+    question: 'Steveがcurrent_userです。Steveのいいねした数を取得してください。', answer: 'current_user.likes.count', order_number: 3 },
   { id: 29, work_id: 2, chapter_id: 29, user_id: 1, title: 'current_userの特定の内容の投稿を取得する',
-    question: 'Johnがcurrent_userです。Johnの【最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。】の投稿を取得してください', answer: 'current_user.posts.where(body: "最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。")', order_number: 3 },
+    question: 'Johnがcurrent_userです。Johnの【最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。】の投稿を取得してください。', answer: 'current_user.posts.where(body: "最近、新しくオープンしたレストランに行きました。料理がとても美味しかったです。")', order_number: 3 },
 
   # 中級編
   { id: 40, work_id: 3, chapter_id: 40, user_id: 3, title: 'current_userがコメントした全てのユーザーを取得する',
@@ -432,6 +430,7 @@ practices = [
     question: 'Lilyがcurrent_userです。Lilyがいいねした投稿に紐づくカテゴリを全て取得してください。', answer: 'current_user.liked_posts.joins(:categories).pluck("categories.name").uniq', order_number: 3 },
   { id: 49, work_id: 3, chapter_id: 49, user_id: 9, title: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿を全て取得する',
     question: 'Lunaがcurrent_userです。Lunaがコメントした投稿の中で特定のタグが付けられた投稿を全て取得してください。', answer: 'current_user.posts.joins(:tags).where("tags.name = ?", "レストラン")', order_number: 3 },
+    
   # 上級編
   { id: 60, work_id: 4, chapter_id: 60, user_id: 10,title: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', 
     question: 'Billがcurrent_userです。Billがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得してください。', answer: 'Post.joins(:likes).where(user: current_user.following).group("posts.id").order("count(likes.id) desc").first', order_number: 3 },
