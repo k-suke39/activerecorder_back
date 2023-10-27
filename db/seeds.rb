@@ -349,7 +349,6 @@ chapters = [
   { id: 27, work_id: 2, name: 'current_userのコメント数を取得する', slug: 'basic', order_number: 3 },
   { id: 28, work_id: 2, name: 'current_userのいいね数を取得する', slug: 'basic', order_number: 3 },
   { id: 29, work_id: 2, name: 'current_userの特定の内容の投稿を取得する', slug: 'basic', order_number: 3 },
-
   # 中級編
   { id: 40, work_id: 3, name: 'current_userがコメントした全てのユーザーを取得する', slug: 'intermediate', order_number: 1 },
   { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate',order_number: 2 },
@@ -361,7 +360,6 @@ chapters = [
   { id: 47, work_id: 3, name: 'current_userがコメントした投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
   { id: 48, work_id: 3, name: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する', slug: 'intermediate',order_number: 2 },
   { id: 49, work_id: 3, name: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿をすべて取得する', slug: 'intermediate',order_number: 2 },
-
   # 上級編
   { id: 60, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', slug: 'advanced', order_number: 1 },
   { id: 61, work_id: 4, name: 'current_userがフォローしているユーザーの中で、最も多くの投稿を持つユーザーを取得する', slug: 'advanced', order_number: 1 },
