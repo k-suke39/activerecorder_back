@@ -11,13 +11,13 @@ jobs:
         working-directory: .
     services:
       postgres:
-        image: postgres:13 # PostgreSQLのイメージを指定します。
+        image: postgres:13
         ports:
-          - 5432:5432 # PostgreSQLのデフォルトポート番号を指定します。
+          - 5432:5432
         env:
-          POSTGRES_USER: postgres # PostgreSQLのユーザー名を指定します。
-          POSTGRES_PASSWORD: postgres # PostgreSQLのパスワードを指定します。
-          POSTGRES_DB: test # テスト用のデータベース名を指定します。
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test
 
     steps:
       - name: Checkout code
