@@ -1,0 +1,26 @@
+Layout/LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Security/Eval:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

@@ -41,13 +41,13 @@ module Api
       def get_sql_query(input)
         logs = []
 
-        ActiveSupport::Notifications.subscribe "sql.active_record" do |*args|
+        ActiveSupport::Notifications.subscribe 'sql.active_record' do |*args|
           event = ActiveSupport::Notifications::Event.new(*args)
           sql = event.payload[:sql]
           binds = event.payload[:binds].map(&:value)
 
-          next if sql.start_with?("SELECT \"works\"", "SELECT \"chapters\"", "SELECT \"practices\"")
-          next unless sql.start_with?("SELECT \"") || sql.start_with?("SELECT COUNT")
+          next if sql.start_with?('SELECT "works"', 'SELECT "chapters"', 'SELECT "practices"')
+          next unless sql.start_with?('SELECT "') || sql.start_with?('SELECT COUNT')
 
           binds.each_with_index do |value, i|
             placeholder = "$#{i + 1}"
@@ -55,7 +55,7 @@ module Api
           end
 
           log_entry = {
-            sql: sql,
+            sql:,
             name: event.name,
             duration: event.duration.to_f.round(2)
           }
@@ -67,11 +67,11 @@ module Api
         end
 
         result = eval(input)
-        result = result.to_a if result.is_a?(ActiveRecord::Relation)
+        result.to_a if result.is_a?(ActiveRecord::Relation)
 
-        ActiveSupport::Notifications.unsubscribe "sql.active_record"
+        ActiveSupport::Notifications.unsubscribe 'sql.active_record'
         sql_logs = logs.map { |log| log[:sql] }
-        {sql: sql_logs.empty? ? "" : sql_logs.join(";") + ";"}
+        { sql: sql_logs.empty? ? '' : "#{sql_logs.join(';')};" }
       end
 
       def check_strings(input, strings)
