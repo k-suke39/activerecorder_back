@@ -348,12 +348,12 @@ chapters = [
   { id: 41, work_id: 3, name: 'current_userがコメントした投稿の中で最も多くいいねされたものを取得する', slug: 'intermediate', order_number: 2 },
   { id: 42, work_id: 3, name: 'current_userがいいねした全ての投稿の中で最も多くコメントされたものを取得する', slug: 'intermediate', order_number: 2 },
   { id: 43, work_id: 3, name: 'current_userの投稿に紐づくカテゴリを全て取得する', slug: 'intermediate', order_number: 1 },
-  { id: 44, work_id: 3, name: 'current_userの投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
-  { id: 45, work_id: 3, name: 'current_userの投稿に紐づくタグ数を取得する', slug: 'intermediate',order_number: 2 },
-  { id: 46, work_id: 3, name: 'current_userの投稿に紐づくカテゴリ数を取得する', slug: 'intermediate',order_number: 2 },
-  { id: 47, work_id: 3, name: 'current_userがコメントした投稿に紐づくタグを全て取得する', slug: 'intermediate',order_number: 2 },
-  { id: 48, work_id: 3, name: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する', slug: 'intermediate',order_number: 2 },
-  { id: 49, work_id: 3, name: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿をすべて取得する', slug: 'intermediate',order_number: 2 },
+  { id: 44, work_id: 3, name: 'current_userの投稿に紐づくタグを全て取得する', slug: 'intermediate', order_number: 2 },
+  { id: 45, work_id: 3, name: 'current_userの投稿に紐づくタグ数を取得する', slug: 'intermediate', order_number: 2 },
+  { id: 46, work_id: 3, name: 'current_userの投稿に紐づくカテゴリ数を取得する', slug: 'intermediate', order_number: 2 },
+  { id: 47, work_id: 3, name: 'current_userがコメントした投稿に紐づくタグを全て取得する', slug: 'intermediate', order_number: 2 },
+  { id: 48, work_id: 3, name: 'current_userがいいねした投稿に紐づくカテゴリを全て取得する', slug: 'intermediate', order_number: 2 },
+  { id: 49, work_id: 3, name: 'current_userがコメントした投稿の中で特定のタグが付けられた投稿をすべて取得する', slug: 'intermediate', order_number: 2 },
 
   # 上級編
   { id: 60, work_id: 4, name: 'current_userがフォローしているユーザーが投稿した投稿の中で、最も多くの「いいね」が付けられている投稿を取得する', slug: 'advanced',
