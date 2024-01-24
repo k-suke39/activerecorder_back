@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 
 class Execution
-  def self.execute_and_rescue(input, _context_binding)
-    execute_input(input)
+  def self.execute_and_rescue(input, context_binding)
+    check_strings(input)
+    if input == 'current_user' 
+      execute_current_user_method(context_binding)
+    else
+      execute_input(input)
+    end
   rescue StandardError => e
     { result: '実行できませんでした。コードが正しいか一度確認してみてください。', error: e.message }
   end
 
   def self.execute_input(input)
     eval(input)
+  end
+
+  def self.execute_current_user_method(context_binding)
+    context_binding.eval('current_user')
   end
 
   def self.check_strings(input)
