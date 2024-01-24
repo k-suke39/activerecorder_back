@@ -9,7 +9,7 @@ RSpec.describe Execution, type: :model do
       let(:valid_input) { 'User.all' }
       it '入力を実行して結果を返すこと' do
         allow(Execution).to receive(:execute_input).with(valid_input).and_return('SELECT * FROM users;')
-        expect(Execution.execute_and_rescue(valid_input)).to eq('SELECT * FROM users;')
+        expect(Execution.execute_and_rescue(valid_input, binding)).to eq('SELECT * FROM users;')
       end
     end
 
@@ -17,7 +17,7 @@ RSpec.describe Execution, type: :model do
       let(:error_input) { 'raise StandardError' }
       it 'エラーを捕捉してエラーメッセージを返すこと' do
         allow(Execution).to receive(:execute_input).with(error_input).and_raise(StandardError)
-        result = Execution.execute_and_rescue(error_input)
+        result = Execution.execute_and_rescue(error_input, binding)
         expect(result).to have_key(:result)
         expect(result).to have_key(:error)
         expect(result[:result]).to eq('実行できませんでした。コードが正しいか一度確認してみてください。')
