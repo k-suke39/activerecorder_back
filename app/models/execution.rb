@@ -3,8 +3,8 @@
 class Execution
   def self.execute_and_rescue(input, context_binding)
     check_strings(input)
-    if input == 'current_user'
-      execute_current_user_method(context_binding)
+    if input.start_with?('current_user')
+      execute_current_user(input, context_binding)
     else
       execute_input(input)
     end
@@ -16,8 +16,8 @@ class Execution
     eval(input)
   end
 
-  def self.execute_current_user_method(context_binding)
-    context_binding.eval('current_user')
+  def self.execute_current_user(input, context_binding)
+    context_binding.eval(input)
   end
 
   def self.check_strings(input)
