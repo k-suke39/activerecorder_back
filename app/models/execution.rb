@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Execution
-  def self.execute_and_rescue(input)
+  def self.execute_and_rescue(input, _context_binding)
     execute_input(input)
   rescue StandardError => e
     { result: '実行できませんでした。コードが正しいか一度確認してみてください。', error: e.message }

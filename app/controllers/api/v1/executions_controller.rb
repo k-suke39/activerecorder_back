@@ -6,14 +6,14 @@ module Api
       before_action :decode_and_check_input, only: %i[index check sql]
 
       def index
-        render json: Execution.execute_and_rescue(@input_string)
+        render json: Execution.execute_and_rescue(@input_string, binding)
       end
 
       def check
         Execution.check_strings(@input_string)
-        user_answer = Execution.execute_and_rescue(@input_string)
+        user_answer = Execution.execute_and_rescue(@input_string, binding)
         answer = Practice.find_by(id: params[:practice_id]).answer
-        question_answer = Execution.execute_and_rescue(answer)
+        question_answer = Execution.execute_and_rescue(answer, binding)
 
         render json: { result: user_answer == question_answer }
       end
