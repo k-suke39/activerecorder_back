@@ -3,7 +3,7 @@
 class Execution
   def self.execute_and_rescue(input, context_binding)
     check_strings(input)
-    if input == 'current_user' 
+    if input == 'current_user'
       execute_current_user_method(context_binding)
     else
       execute_input(input)
