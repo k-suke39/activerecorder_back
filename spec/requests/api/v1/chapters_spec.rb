@@ -16,7 +16,7 @@ RSpec.describe Api::V1::ChaptersController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
-    it 'JSON body response contains expected work practices' do
+    it 'JSONのレスポンスに適切なチャプターデータが含まれている' do
       json_response = JSON.parse(response.body)
       expect(json_response).to match({
         'chapters' => [
